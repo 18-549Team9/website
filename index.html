@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>osu!Gosu</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">Concept and Motivation</a></li>
+							<li><a href="#two">Competitive Analysis</a></li>
+							<li><a href="#three">Requirements</a></li>
+							<li><a href="#four">Technical Specifications</a></li>
+							<li><a hred="#five">Interaction Diagrams</a></li>
+							<li><a href="#six">Progress Updates</a></li>
+							<li><a href="#seven">Documents</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>osu!Gosu</h1>
+							<p>Matthew Du, Victor Hu, Kevin Kuan, Yue Li</p>
+							<ul class="actions">
+								<li><a href="#one" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							
+							<div class="content">
+								<div class="inner">
+									<h2>Concept</h2>
+									<p>osu!Gosu is an interactive rhythm motion game in 3D space played with your hands, based off the popular 2-D computer game <a href = "https://osu.ppy.sh/"> osu! </a>. At its core, osu!Gosu uses infrared cameras to track the user's hands and head for an exciting interactive experience. </p>
+								</div>
+							</div>
+						</section>
+						<section>
+							
+							<div class="content">
+								<div class="inner">
+									<h2>Motivation</h2>
+									<p>Current motion tracking technologies like the Kinect have input lags of up to 300 ms, which is simply unacceptable for playing any rhythm-based games. osu!Gosu will limit latencies to 100 ms, allowing users to play the game without putting a fist through the TV in frustration.</p>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>Competitive Analysis</h2>
+							<p>There are many other interactive games that we have a clear competive advantage over.</p>
+							<div class="features">
+								<section>
+									<span class="icon major fa-star"></span>
+									<h3><a href="https://osu.ppy.sh/">osu!</a></h3>
+									<p>osu! is a popular musical rhythm PC game where the user uses the mouse to click, drag, and spin onscreen circles to a song.</p>
+								</section>
+								<section>
+									<span class="icon major fa-star"></span>
+									<h3>osu!Gosu</h3>
+									<p>osu!Gosu will allow the user to be more involved in gameplay, using their arms and hands instead of just a mouse. We believe this will deliver a more engaging experience.</p>
+								</section>
+								<section>
+									<span class="icon major fa-desktop"></span>
+									<h3><a href="http://www.xbox.com/en-US/xbox-one/accessories/kinect-for-xbox-one">Kinect</a></h3>
+									<p>Kinect is a motion sensing peripheral developed by Microsoft for their XBox product line. It allows for full video capture with associated color and depth information, resulting in potentially low sampling rates and high latencies.</p>
+								</section>
+								<section>
+									<span class="icon major fa-desktop"></span>
+									<h3>osu!Gosu</h3>
+									<p>osu!Gosu uses simple infrared location sensing without the need to capture full images, allowing it to capture hand position with less input latency, which is critical for playing rhythm games.</p>
+								</section>
+								<section>
+									<span class="icon major fa-music"></span>
+									<h3><a href="http://www.guitarhero.com">Guitar Hero</a></h3>
+									<p>Guitar hero is a musical rhythm game where the user manipulates a prop guitar with buttons to simulate playing a guitar across various rock songs.</p>
+								</section>
+								<section>
+									<span class="icon major fa-music"></span>
+									<h3>osu!Gosu</h3>
+									<p>osu!Gosu allows the user to interact with the game without the need for potentially cumbersome props.</p>
+								</section>
+								<section>
+									<span class="icon major fa-arrow-up"></span>
+									<h3><a href="https://us.konami.com/ddr/">DanceDanceRevolution</a></h3>
+									<p>DDR is a musical rhythm game where the user stands on a dance platform and steps on directional arrows as shown on a screen. DDR machines are large and bulky and typically expensive.</p>
+								</section>
+								<section>
+									<span class="icon major fa-arrow-up"></span>
+									<h3>osu!Gosu</h3>
+									<p>osu!Gosu is cheaper without fundamentally sacrificing the interactive body movements that make these rhythm games so fun.</p>
+								</section>
+							</div>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 spotlights">
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Functional Requirements</h2>
+									<ol>
+										<li>High fidelity motion tracking
+											<ul>
+												<li>Pixel accurate to 1024 * 768 resolution. </li>
+												<li>Accurately filters out input noise. </li>
+											</ul>
+										</li>
+										<li>Gesture recognition</li>
+										<ul>
+											<li>Recognition of open fist and closed fist gestures for selection of active elements. </li>
+										</ul>
+										<li>Haptic feedback</li>
+										<ul>
+											<li>Feedback after selection and release of active elements.  </li>
+										</ul>
+										<li>Low input latency</li>
+										<ul>
+											<li>Less than 100ms input latency for feedback, gesture recognition, and motion tracking. </li>
+										</ul>
+										<li>Synchronous audio/video playback</li>
+										<ul>
+											<li>60 fps framerate </li>
+											<li>Smooth-tracking active elements  </li>
+											<li>Synchronized audio and video streams </li>
+											<li>Audio response to active elements </li>
+										</ul>
+									</ol>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Non-functional Requirements</h2>
+									<ol>
+										<li>Unintrusive hardware</li>
+										<ul>
+											<li>Wireless, ightweight controller</li>
+											<li>Low profile camera and console unit </li>
+											<li>Ergonomic form factor </li>
+										</ul>
+										<li>Intuitive gameplay</li>
+										<ul>
+											<li>Controls can be calibrated to suit individual users</li>
+											<li>Game mechanics don’t require memorization</li>
+											<li>Responsive display mechanism </li>
+										</ul>
+									</ol>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Three -->
+					<section id="four" class="wrapper style2 spotlights">
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Hardware</h2>
+									<ul>
+										<li>4x Wii Remote's Pixart Camera
+											<ul>
+												<li>1024 x 768 pixel resolution</li>
+												<li>33 x 23 degree field of view</li>
+												<li>4-object tracking capability</li>
+												<li>IR-pass filter lens</li>
+												<li>100 Hz sampling mix</li>
+												Purchase Link: <a href="http://www.amazon.com/Wii-Remote-Controller-Nintendo/dp/B000IMWK2G">http://www.amazon.com/Wii-Remote-Controller-Nintendo/dp/B000IMWK2G</a>
+												<p />
+												Estimated Cost: $100
+											</ul>
+										</li>
+
+										<li>1x Raspberry Pi
+											<ul>
+												<li>900 MHz quad-core processor</li>
+												<li>1 GB RAM</li>
+												<li>40-pin header for GPIO</li>
+												<li>10/100 BaseT RJ45 Ethernet socket</li>
+												Purchase Link: <a href="http://www.alliedelec.com/raspberry-pi-raspberry-pi-2-model-b/70465426/">http://www.alliedelec.com/raspberry-pi-raspberry-pi-2-model-b/70465426</a>
+												<p />
+												Estimated Cost: $35
+											</ul>
+										</li>
+
+										<li>25x 850nm IR LED
+											<ul>
+												<li>1.4-1.6 V DC forward voltage</li>
+												<li>20 mA max forward current</li>
+												Purchase Link: <a href="https://www.sparkfun.com/products/9854">https://www.sparkfun.com/products/9854</a>
+												<p />
+												Estimated Cost: $5
+											</ul>
+										</li>
+
+
+										<li>Laptop</li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Software</h2>
+									<ul>
+										<li><a href="https://www.raspberrypi.org/downloads/raspbian/">Raspbian Jessie OS</a> - With Python 2.7 and C++11</li>
+										<li><a href="https://unity3d.com/get-unity">Unity3D</a> - in C#</li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Protocols</h2>
+									<ul>
+										<li>I2C</li>
+										<li>TCP/IP</li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+					<section id="five" class="wrapper style3 spotlights">
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Interaction Diagrams</h2>
+									<ul>
+										<li><a href="https://github.com/18-549Team9/">Code repository</a></li>
+									</ul>
+						</section>
+					</section>
+
+					<section id="six" class="wrapper style1 spotlights">
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Week 1</h2>
+									<p>We spent the first week desigining the PCB for our project, which involved researching the specifications of the hardware we planned to use, as well as meeting with the TA in order to determine whether our design was feasible. We also began to take apart a Wii remote in order to better understand the IR Camera that we were going to work with for the remainder of our project. The responsibilities were broken down as the following: </p>
+									<ul>
+										<li> Matt was responsible for leading the PCB design. </li>
+										<li> Victor was responsible for assisting with the PCB design. </li>
+										<li> Kevin was responsible for assisting with the PCB design and updating the website.</li>
+										<li> Yue was responsible for breaking apart the Wii remote. </li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Week 2</h2>
+									<p> Now that our PCB design is complete, we have begun soldering components on to the PCB board. In order to get these components, more importantly the IR cameras, we needed to break apart the other Wii remotes.  We have also begun devleoping the game software for osu!Gosu using Unity. We hope to have a very basic minimum viable product with respect to software within the next week for the purposes of testing our hardware. The responsibilities were broken down as the following: </p>
+									<ul>
+										<li> Matt was responsible for finalizing the PCB design. </li>
+										<li> Victor was responsible for beginning the implemention of the interface for software development for osu!Gosu</li>
+										<li> Kevin was responsible for assisting with the software development for osu!Gosu and updating the website.</li>
+										<li> Yue was responsible for getting the other IR cameras from the rest of the Wii remotes. </li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Week 3</h2>
+									<p> We have completed assembling the PCB, and now have moved onto focusing on the software components of our project. In particular, we have begun writing out basic gameplay for osu!Gosu, and we have also begun writing drivers for the Raspberry Pi. </p>
+									<ul>
+										<li> Matt was responsible for writing the I2C drivers for the Raspberry Pi.</li>
+										<li> Victor was responsible for implementing menu screens and game objects for osu!Gosu</li>
+										<li> Kevin was responsible for writing scripts for osu!Gosu.</li>
+										<li> Yue was responsible for finshing the PCB soldering and beginning work on the IR LEDs. </li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Week 4</h2>
+									<p> Unfortunately, becuase we were unable to acquire the IR LEDs in time, we ended up borrowed a single IR LED to conduct our tests for reading the data feed from the IR camera. We then shifted our focus on developing more software for our project. With the drivers being completed for the Raspberry Pi, we started working on the API to gather the data from the IR LED. </p>
+									<ul>
+										<li> Matt was responsible for writing the socket API for the IR LED. </li>
+										<li> Victor was responsible for writing software for the 3D component of osu!Gosu</li>
+										<li> Kevin was responsible for writing sliders and other game objects for osu!Gosu.</li>
+										<li> Yue was responsible for putting together usable hardware with the singel IR LED. </li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Week 5</h2>
+									<p> Our IR LEDs have arrived, so we can now begin making the glove and headset. We finished making a basic circuit that has an IR LED constantly on, so the software team can begin the initial testing of the IR LED tracking. The software team has also decided to focus on building 3-D Jenga as a game to demo, as we would be able to test 3-D headtracking much sooner with using simpler 3-D objects. Because the UDP socket API is completed, we can also begin focusing on creating a mouse driver for more applicative uses of the IR LED tracking. </p>
+									<ul>
+										<li> Matt was responsible for tweaking the socket API for the IR LED and begin working on the mouse driver.</li>
+										<li> Victor was responsible for writing code for 3-D Jenga.</li>
+										<li> Kevin was responsible for writing parsing code and connecting the socket API to Unity.</li>
+										<li> Yue was responsible for putting together the glove and headset with IR LEDs and th. </li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Week 6</h2>
+									<p> The IR LED glove is now complete with a very rudimentary headset. After some user testing, we quickly realized that the LED placements on the glove were not comfortable for the user, so a new glove will be made so that the user will be using a fist instead of an open hand for the glove position. The headset LEDs work reasonably well for testing purposes, but a new headset will be designed with more optimal placements of the LEDs on some new goggles.   </p>
+									<p>
+									The software for the mouse driver is complete, and it works reasonably well with the glove. The latency is much better than expected, we observed about 10 to 15 ms when we were shooting for less than 50 ms. The headtracking on the 3-D Jenga game also works well, as the camera perspective shifts with 10 to 15 ms latency. Overall, we are very pleased with the latency of the LED tracking, but we will focus now on optimizing it even more and making sure that the headset and the glove can work together in the same space.  </p>
+									<ul>
+										<li> Matt was responsible for tweaking the mouse driver code and rewriting more clean parsing code.</li>
+										<li> Victor was responsible for optimizing code with IR LED tracking on the glove.</li>
+										<li> Kevin was responsible for optimizing code with IR LED tracking on the headset.</li>
+										<li> Yue was responsible for making a new glove and headset.</li>
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Week 7</h2>
+									<p>The core gameplay and functionality of our project is complete. The new glove and headset feel very comfortable for the user, and IR LED tracking is much more optimized than last week. IR LED tracking with the headset and glove in the same space is now fully integrated, so users can change camera perspective and move blocks in 3-D jenga. The glove is also performing very well with the mouse driver, and users can play Osu with minimal latency. Because the final demo is next week, we plan to keep tweaking the code with respect to 3-D Jenga, as the headset and glove tracking in the same space could use a bit more optimization. We also need to write code for when the Raspberry Pi resets, as well as have a back-up glove, as we want to make sure our final presentation of our project is free of potential issues. </p>
+									<ul>
+										<li> Matt was responsible for writing code to reset the Raspberry Pi and drivers successfully.</li>
+										<li> Victor was responsible for more optimization of the 3-D Jenga code.</li>
+										<li> Kevin was responsible for more optimization of the IR LED tracking code.</li>
+										<li> Yue was responsible for making a back-up glove and getting more batteries for the private and public demo. </li>
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+					<!-- Three -->
+					<section id="seven" class="wrapper style2 spotlights">
+						<section>
+							<div class="content">
+								<div class="inner">
+									<h2>Documents</h2>
+									<ul>
+										<li><a href="https://github.com/18-549Team9/">Code repository</a></li>
+										<li>Demo of camera movement with 3d objects<iframe width="560" height="315" src="https://www.youtube.com/embed/moNIs_leQlI" frameborder="0" allowfullscreen></iframe></li>
+									</ul>
+						</section>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
